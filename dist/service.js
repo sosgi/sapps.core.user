@@ -32,6 +32,8 @@ System.register(['./domain'], function (_export) {
                                 self._repository.getUser().then(function (data) {
                                     self._user = createUser(data);
                                     resolve(self._user);
+                                })['catch'](function (error) {
+                                    console.log(error);
                                 });
                             }
                         });

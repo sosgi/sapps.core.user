@@ -1,7 +1,7 @@
 System.register(['sapps.core.api', './service', './repository'], function (_export) {
     'use strict';
 
-    var IHttpConnection, IUserManager, UserService, Repository, UserServiceTracker;
+    var IHttpConnection, IUserService, UserService, Repository, UserServiceTracker;
 
     var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -10,7 +10,7 @@ System.register(['sapps.core.api', './service', './repository'], function (_expo
     return {
         setters: [function (_sappsCoreApi) {
             IHttpConnection = _sappsCoreApi.IHttpConnection;
-            IUserManager = _sappsCoreApi.IUserManager;
+            IUserService = _sappsCoreApi.IUserService;
         }, function (_service) {
             UserService = _service['default'];
         }, function (_repository) {
@@ -43,7 +43,7 @@ System.register(['sapps.core.api', './service', './repository'], function (_expo
                         service.getUser().then(function (user) {
                             console.log(user);
                         });
-                        this._reg = this._ctx.services.register(IUserManager, service);
+                        this._reg = this._ctx.services.register(IUserService, service);
                     }
                 }, {
                     key: 'removedService',

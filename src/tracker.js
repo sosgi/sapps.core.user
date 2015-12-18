@@ -1,7 +1,6 @@
-import {IHttpConnection, IUserManager} from 'sapps.core.api';
+import {IHttpConnection, IUserService} from 'sapps.core.api';
 import UserService from './service';
 import Repository from './repository';
-
 
 export default class UserServiceTracker{
     constructor(ctx, dispacher) {
@@ -20,7 +19,7 @@ export default class UserServiceTracker{
         service.getUser().then((user) => {
             console.log(user);
         })
-        this._reg = this._ctx.services.register(IUserManager, service);
+        this._reg = this._ctx.services.register(IUserService, service);
 
 
     }

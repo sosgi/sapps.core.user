@@ -16,7 +16,9 @@ export default class UserService{
                   .then((data) => {
                     self._user = createUser(data);
                     resolve(self._user);
-                  });
+                }).catch(error => {
+                    console.log(error);
+                });
             }
         });
     }
